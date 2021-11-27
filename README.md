@@ -1,6 +1,2 @@
 # interfiber.github.io
-The source code for interfiber.dev
-
-
-## Default.html
-Default.html is basically index.html
+My personal website hosted at: https://www.interfiber.dev. The apex domain(https://interfiber.dev) will redirect to the www subdomain just fyi
