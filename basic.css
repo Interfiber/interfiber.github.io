@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body {
+    background-color: rgb(30, 30, 30);
+    color: rgb(221, 221, 221);
+    font-family: 'FantasqueSansMonoRegular';
+    font-weight: normal;
+    font-style: normal; 
+    text-align: center;
+}
+hr {
+    color: wheat;
+    width: 30%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+.pfp {
+    margin-right: 16px;
+    border-radius: 50%;
+}
+.headerWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    margin-bottom: 32px;
+}
+a {
+    color: wheat;
+    text-decoration: none;
+}
+a:hover {
+    font-size: 18px;
+}

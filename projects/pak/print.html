@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Pak Docs</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="project.html"><strong aria-hidden="true">3.</strong> Project File Docs</a></li><li class="chapter-item expanded "><a href="scripts.html"><strong aria-hidden="true">4.</strong> Installer Scripts</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Pak Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="pak-docs"><a class="header" href="#pak-docs">Pak Docs</a></h1>
+<p>MacOS package installer builder</p>
+<h2 id="downloads"><a class="header" href="#downloads">Downloads</a></h2>
+<details>
+<summary>Download Links</summary>
+<br>
+<a href="https://gitlab.com/Interfiber/pak/uploads/db44f3485772f66d3a4e9fa37fb2ded8/installer.pkg">Download v1.0.1</a>
+<p><a href="https://gitlab.com/Interfiber/pak/uploads/9cdd38569a5057cb00f1e516d186b13c/installer.pkg">Download v0.2.1</a></p>
+<p><a href="https://gitlab.com/Interfiber/pak/uploads/5f506877c4500e1616a57a12915dfe07/installer.pkg">Download v0.2.0</a></p>
+</details>
+<h2 id="what-does-pak-do"><a class="header" href="#what-does-pak-do">What does pak do?</a></h2>
+<p>Pak builds MacOS package installers from a project file. Since apple removed PackageBuilder from xcode it became harder to build packages
+for software on MacOS, this is what pak aims to fix.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<h2 id="with-cargo"><a class="header" href="#with-cargo">With Cargo</a></h2>
+<p>You can install pak via cargo using the following command:</p>
+<pre><code class="language-bash">cargo install pakcli
+</code></pre>
+<h2 id="manually"><a class="header" href="#manually">Manually</a></h2>
+<p>If you want to install pak manually you can go to the main page, and download the latest version. This will download a pkg installer which can then be ran to install pak.</p>
+<h2 id="with-homebrew"><a class="header" href="#with-homebrew">With Homebrew</a></h2>
+<p>If you use homebrew you can install pak using the following commands:</p>
+<pre><code class="language-shell">brew tap Interfiber/homebrew-tap
+brew install --cask pak
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="project-file-docs"><a class="header" href="#project-file-docs">Project File Docs</a></h1>
+<p>Docs for the <code>pak.project.json</code> file in every pak project</p>
+<h2 id="projectname-string"><a class="header" href="#projectname-string">projectName [String]</a></h2>
+<p>The name of the project, also displayed as the title in the installer</p>
+<pre><code class="language-json">&quot;projectName&quot;: &quot;Epic Project&quot;
+</code></pre>
+<h2 id="version-string"><a class="header" href="#version-string">version [String]</a></h2>
+<p>Current package version</p>
+<pre><code class="language-json">&quot;version&quot;: &quot;0.0.1&quot;
+</code></pre>
+<h2 id="orgname-string"><a class="header" href="#orgname-string">orgName [String]</a></h2>
+<p>The organization id for the current project</p>
+<pre><code class="language-json">&quot;orgName&quot;: &quot;dev.interfiber.pak&quot;
+</code></pre>
+<h2 id="components-array"><a class="header" href="#components-array">components [Array]</a></h2>
+<p>Array of components to build into the final package</p>
+<pre><code class="language-json">&quot;components&quot;: [
+    &quot;default&quot;
+]
+</code></pre>
+<h1 id="section-components"><a class="header" href="#section-components">Section: Components</a></h1>
+<p>Components are declared as objects in the project file like this:</p>
+<pre><code class="language-json">&quot;component_super_epic&quot;: {
+    
+}
+</code></pre>
+<p>the name of the object must start with <code>component</code> then a underscore and a name with no spaces
+To compile the component into the package the name must be listed in the <code>components</code> array.</p>
+<h2 id="name-string"><a class="header" href="#name-string">$name [String]</a></h2>
+<p>Name of the component displayed to the user, this can contain spaces.</p>
+<h2 id="pkgname-string"><a class="header" href="#pkgname-string">$pkgName [String]</a></h2>
+<p>Name of the component <strong>WITHOUT SPACES</strong>, used to generate the raw packages</p>
+<h2 id="installdir-path"><a class="header" href="#installdir-path">$installDir [Path]</a></h2>
+<p>Path to the installation directory</p>
+<h2 id="payloadname-string"><a class="header" href="#payloadname-string">$payloadName [String]</a></h2>
+<p>Name of the folder containing the payload located in the <code>payloads</code> folder.</p>
+<h2 id="selectable-bool"><a class="header" href="#selectable-bool">$selectable [Bool]</a></h2>
+<p>If the component should be selectable when the user is choosing what packages to be installed</p>
+<h2 id="selected-bool"><a class="header" href="#selected-bool">$selected [Bool]</a></h2>
+<p>If the component should start selected when the user is choosing what packages to be installed</p>
+<h2 id="visible-bool"><a class="header" href="#visible-bool">$visible [Bool]</a></h2>
+<p>If the component should be visible to the user when choosing what packages to be installed</p>
+<h2 id="scriptsfolder-path"><a class="header" href="#scriptsfolder-path">$scriptsFolder [Path]</a></h2>
+<p>Relative path to the folder containing scripts for the package
+For more info on scripts see the <a href="scripts.html">Scripts</a> section</p>
+<h1 id="section-appearance"><a class="header" href="#section-appearance">Section: Appearance</a></h1>
+<p>Appearance settings apply to the entire installer, the Appearance config allows you to change background image, license, readme, welcome, and more.</p>
+<pre><code class="language-json">&quot;appearance&quot;: {
+    &quot;comment&quot;: &quot;Appearance config goes inside this json object&quot;
+}
+</code></pre>
+<h2 id="license-path"><a class="header" href="#license-path">$license [Path]</a></h2>
+<p>Relative path to the text file used for the software license. During the install the user will need to agree to this license in order to continue</p>
+<h2 id="welcomehtml-path"><a class="header" href="#welcomehtml-path">$welcomeHtml [Path]</a></h2>
+<p>Relative path to the html file used for the welcome screen. The rendered html will be displayed to the user when the installer launches</p>
+<h2 id="conclusionhtml-path"><a class="header" href="#conclusionhtml-path">$conclusionHtml [Path]</a></h2>
+<p>Relative path to the html file used for the conclusion screen. The rendered html will be displayed to the user when the install finishes with success</p>
+<h2 id="readme-path"><a class="header" href="#readme-path">$readme [Path]</a></h2>
+<p>Relative path to the text file used for the readme screen. The contents of the readme file will be showed to the user before the install starts</p>
+<h2 id="enablebackground-bool"><a class="header" href="#enablebackground-bool">$enableBackground [Bool]</a></h2>
+<p>Tells pak if it should look for a background config, default is false</p>
+<h1 id="section-background-config"><a class="header" href="#section-background-config">Section: Background config</a></h1>
+<p>The background config is a subsection of the Appearance section, as the config for it will be placed inside the Appearance object likle below:</p>
+<pre><code class="language-json">&quot;appearance&quot;: {
+    &quot;$backgroundConfig&quot;: {}
+}
+</code></pre>
+<p>Note that pak will not look for a background config unless <code>$enableBackground</code> is set to true in the Appearance config</p>
+<h2 id="imagefile-path"><a class="header" href="#imagefile-path">$imageFile [Path]</a></h2>
+<p>Relative path to the image file used as the background</p>
+<h2 id="align-string"><a class="header" href="#align-string">$align [String]</a></h2>
+<p>Align type for the image, types are:</p>
+<p><code>center</code>, <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>, <code>topleft</code>, <code>topright</code>, <code>bottomleft</code>, and <code>bottomright</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installer-scripts"><a class="header" href="#installer-scripts">Installer Scripts</a></h1>
+<p>Installer scripts are files that contain code to be execute during the install process</p>
+<h2 id="adding-scripts-to-a-component"><a class="header" href="#adding-scripts-to-a-component">Adding scripts to a component</a></h2>
+<p>To declare a folder to load scripts from we need to set <code>$scriptsFolder</code> in the component we want to add scripts to like below:</p>
+<pre><code class="language-json">&quot;$scriptsFolder&quot;: &quot;scripts&quot;
+</code></pre>
+<p>This will tell pak to build the component using any scripts from the <code>scripts</code> folder.</p>
+<h2 id="preinstall-scripts"><a class="header" href="#preinstall-scripts">Preinstall scripts</a></h2>
+<p>To add a preinstall script, create a new file in the folder storing you're scripts called <code>preinstall</code> this should have no file extension
+Then make the file executable like this:</p>
+<pre><code class="language-bash">chmod +x preinstall
+</code></pre>
+<p>The code inside preinstall by default uses shell script, but it can be changed by adding a <a href="https://bash.cyberciti.biz/guide/Shebang">shebang</a></p>
+<h2 id="postinstall-scripts"><a class="header" href="#postinstall-scripts">Postinstall scripts</a></h2>
+<p>To add a postinstall script, create a new file in the folder storing you're scripts called <code>postinstall</code> this should have no file extension
+Then make the file executable like this:</p>
+<pre><code class="language-bash">chmod +x postinstall
+</code></pre>
+<p>The code inside postinstall by default uses shell script, but it can be changed by adding a <a href="https://bash.cyberciti.biz/guide/Shebang">shebang</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>
