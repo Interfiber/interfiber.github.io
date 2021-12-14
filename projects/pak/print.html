@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="project.html"><strong aria-hidden="true">3.</strong> Project File Docs</a></li><li class="chapter-item expanded "><a href="scripts.html"><strong aria-hidden="true">4.</strong> Installer Scripts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Home</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="project.html"><strong aria-hidden="true">3.</strong> Project File Docs</a></li><li class="chapter-item expanded "><a href="scripts.html"><strong aria-hidden="true">4.</strong> Installer Scripts</a></li><li class="chapter-item expanded "><a href="pakr.html"><strong aria-hidden="true">5.</strong> Pakr</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pakr_install.html"><strong aria-hidden="true">5.1.</strong> Pakr Install</a></li><li class="chapter-item expanded "><a href="pakr_functions.html"><strong aria-hidden="true">5.2.</strong> Pakr Functions</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,7 +149,8 @@
 <details>
 <summary>Download Links</summary>
 <br>
-<a href="https://github.com/Interfiber/pak/releases/download/v1.0.1/installer.pkg">Download v1.0.1</a>
+<a href="https://github.com/Interfiber/pak/releases/download/v1.0.2/installer.pkg">Download v1.0.2</a>
+<p><a href="https://github.com/Interfiber/pak/releases/download/v1.0.1/installer.pkg">Download v1.0.1</a></p>
 <p><a href="https://github.com/Interfiber/pak/releases/download/v0.2.1/installer.pkg">Download v0.2.1</a></p>
 <p><a href="https://github.com/Interfiber/pak/releases/download/v0.2.0/installer.pkg">Download v0.2.0</a></p>
 </details>
@@ -168,6 +169,8 @@ for software on MacOS, this is what pak aims to fix.</p>
 <pre><code class="language-shell">brew tap Interfiber/homebrew-tap
 brew install --cask pak
 </code></pre>
+<h2 id="notice-about-codesign"><a class="header" href="#notice-about-codesign">Notice about codesign</a></h2>
+<p>The installers are NOT codesigned, which means macOS will not open it. To open it RIGHT CLICK the file in finder and click open.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="project-file-docs"><a class="header" href="#project-file-docs">Project File Docs</a></h1>
 <p>Docs for the <code>pak.project.json</code> file in every pak project</p>
 <h2 id="projectname-string"><a class="header" href="#projectname-string">projectName [String]</a></h2>
@@ -260,6 +263,39 @@ Then make the file executable like this:</p>
 <pre><code class="language-bash">chmod +x postinstall
 </code></pre>
 <p>The code inside postinstall by default uses shell script, but it can be changed by adding a <a href="https://bash.cyberciti.biz/guide/Shebang">shebang</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pakr"><a class="header" href="#pakr">Pakr</a></h1>
+<p>Pakr is the GUI client for pak</p>
+<h2 id="screenshots"><a class="header" href="#screenshots">Screenshots</a></h2>
+<p><img src="./pakr_1.png" alt="Pakr Example 1" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="install-pakr-preview"><a class="header" href="#install-pakr-preview">Install Pakr [PREVIEW]</a></h1>
+<h2 id="manually-1"><a class="header" href="#manually-1">Manually</a></h2>
+<p>By using the main pak installer you can enter the customize screen,
+and select <code>pakr</code>.</p>
+<h2 id="via-cargo"><a class="header" href="#via-cargo">via cargo</a></h2>
+<pre><code class="language-bash">cargo install pakr
+</code></pre>
+<h2 id="notice-about-codesign-1"><a class="header" href="#notice-about-codesign-1">Notice about codesign</a></h2>
+<p>The installers are NOT codesigned, which means macOS will not open it. To open it RIGHT CLICK the file in finder and click open.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pakr-functions"><a class="header" href="#pakr-functions">Pakr Functions</a></h1>
+<h2 id="launch-pakr"><a class="header" href="#launch-pakr">Launch pakr</a></h2>
+<p>Once pakr is installed, open a terminal and run the following command:</p>
+<pre><code class="language-bash">pakr
+</code></pre>
+<p>This will launch a instance of pakr</p>
+<h2 id="create-a-project"><a class="header" href="#create-a-project">Create a project</a></h2>
+<p>In the pakr welcome interface enter the path to the project you wish to create, the destination folder SHOULD NOT exist.</p>
+<h2 id="load-a-project"><a class="header" href="#load-a-project">Load a project</a></h2>
+<p>To load a pakr project launch the pakr program with one argument to the location of the project like below</p>
+<pre><code class="language-bash">pakr $HOME/my_example_project
+</code></pre>
+<p>Then in the interface select the <code>Load Project Info</code> button.</p>
+<h2 id="create-a-component"><a class="header" href="#create-a-component">Create a component</a></h2>
+<p>To create a component make sure the project is loaded, then enter the component name and click <code>Add Component</code> like below.
+<img src="./pakr_2.png" alt="Pakr Example 2" /></p>
+<h2 id="save-a-component"><a class="header" href="#save-a-component">Save a component</a></h2>
+<p>Once all changes to a component are made, select the <code>Save/Build Project</code> button to save the project.</p>
+<h2 id="edit-a-component"><a class="header" href="#edit-a-component">Edit a component</a></h2>
+<p>To edit a component make sure the project is loaded, then enter the component name and click ```Edit Component``. After changes are made make sure the save the component.</p>
 
                     </main>
 
