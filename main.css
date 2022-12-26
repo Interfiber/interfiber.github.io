@@ -48,11 +48,14 @@ sidebar {
     padding: 20px;
 }
 
+a {
+    color: var(--blue-color);
+    text-decoration: none;
+}
+
 sidebar a {
     padding: 6px 8px 6px 16px;
-    text-decoration: none;
     font-size: 30px;
-    color: var(--blue-color);
     display: block;
 }
 
@@ -109,4 +112,18 @@ div.gallery img {
 div.desc {
     padding: 15px;
     text-align: center;
+}
+
+button {
+    background-color: var(--color-black);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
