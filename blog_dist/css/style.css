@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono/NoLigatures/Regular/complete/JetBrains%20Mono%20NL%20Regular%20Nerd%20Font%20Complete%20Mono.ttf?raw=true */
+
+@font-face {
+    font-family: JetBrainsNerdFont;
+    src: url('/css/JetBrains\ Mono\ NL\ Regular\ Nerd\ Font\ Complete\ Mono.ttf');
+}
+
+
+* {
+    --background-color: #0d0f18;
+    --forgeground-color: #a5b6cf;
+    --color-black: #151720;
+    --blue-color: #8baff1;
+}
+
+body {
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--forgeground-color);
+    font-family: JetBrainsNerdFont, monospace;
+    text-rendering: optimizeLegibility;
+}
+
+.main {
+
+    margin-left: 140px;
+    /* Same width as the sidebar + left position in px */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+.pfp {
+    border-radius: 15px;
+}
+
+sidebar {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--color-black);
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+a {
+    color: var(--blue-color);
+    text-decoration: none;
+}
+
+sidebar a {
+    padding: 6px 8px 6px 16px;
+    font-size: 30px;
+    display: block;
+}
+
+sidebar a:hover {
+    font-style: italic;
+}
+
+.main {
+    padding-left: 400px;
+    /* Same as the width of the sidenav */
+    font-size: 28px;
+    /* Increased text to enable scrolling */
+    /* padding-left: 10px; */
+}
+
+@media screen and (max-height: 450px) {
+    sidebar {
+        padding-top: 15px;
+    }
+
+    sidebar a {
+        font-size: 18px;
+    }
+}
+
+.right-image-medium-bottom {
+    float: right;
+    padding: 50px;
+    /* padding-top: 100px; */
+    width: 50%;
+    height: 50%;
+    border-radius: 70px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.subtitle {
+    color: #3f4854;
+}
+
+div.gallery {
+    margin: 5px;
+    /* border-radius: 70px; */
+    float: left;
+    width: 400px;
+    height: 450px;
+    background-color: var(--color-black);
+}
+
+div.gallery img {
+    width: 100%;
+    height: 50%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+button {
+    background-color: var(--color-black);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
