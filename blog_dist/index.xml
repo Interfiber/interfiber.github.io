@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog</title>
+    <link>http://www.interfiber.dev/blog_dist/</link>
+    <description>Recent content on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Dec 2022 16:36:11 -0500</lastBuildDate><atom:link href="http://www.interfiber.dev/blog_dist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing dotfiles with Nix (on NixOS)</title>
+      <link>http://www.interfiber.dev/blog_dist/posts/nixos-dotfiles/</link>
+      <pubDate>Tue, 27 Dec 2022 16:36:11 -0500</pubDate>
+      
+      <guid>http://www.interfiber.dev/blog_dist/posts/nixos-dotfiles/</guid>
+      <description>This tutorial will be using Flake, and HomeManager.
+Based on my dotfiles
+Step 1: Enabling nix flakes in /etc/nixos/configuration.nix Flakes are not enabled by default on NixOS, so you need to enable them. We can do this by editing /etc/nixos/configuration.nix.
+At the top of the file add the following lines:
+nix.package = pkgs.nixVersions.stable; # Use the latest stable version of Nix nix.extraOptions = &amp;#39;&amp;#39; experimental-features = nix-command flakes &amp;#39;&amp;#39;; # Enables nix flakes, and the nix command Step 2: Creating a flake.</description>
+    </item>
+    
+  </channel>
+</rss>
