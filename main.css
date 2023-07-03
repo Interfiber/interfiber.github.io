@@ -1,8 +1,10 @@
+@import url("https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css");
+
 body {
     background-color: #111110;
     text-align: center;
-    font-family: 'FantasqueSansMonoRegular';
     color: white;
+	 font-family: 'Iosevka Web';
 }
 
 h1, h2, h3, h4, h5 {
