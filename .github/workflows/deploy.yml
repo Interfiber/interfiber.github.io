@@ -24,13 +24,13 @@ jobs:
         run: npm run build
       
       - name: Add CNAME file
-        run: touch ./dist/CNAME && echo "www.interfiber.dev" > ./dist/CNAME
+        run: touch ./build/CNAME && echo "www.interfiber.dev" > ./dist/CNAME
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./build
 
   deploy:
     name: Deploy
