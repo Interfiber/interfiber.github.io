@@ -1,5 +1,5 @@
 <div class="navbar">
-    <a href="/" class="no-link">Hunter Stasonis</a>
+    <a href="/" class="no-link">Hunter</a>
 
     <b><a href="/projects">Projects</a></b>
     <b><a href="/system">System Setup</a></b>
