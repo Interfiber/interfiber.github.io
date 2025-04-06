@@ -7,7 +7,7 @@
 
 <ProfilePicture url="https://github.com/Interfiber.png"></ProfilePicture>
 
-<h1># Hunter S.</h1>
+<h1># Hunter S</h1>
 
 <p>👋 Hi! I'm Hunter. My profile picture is from Logan Airport</p>
 <p>I've been programming for ~6 years, mainly with C++, Java, Rust, and Lua</p>

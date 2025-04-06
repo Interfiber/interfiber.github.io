@@ -12,15 +12,14 @@
 <ul>
     <li>CPU: Ryzen 5 5600G</li>
     <li>GPU: AMD RX 580</li>
-    <li>Hardware Security Key: YubiKey 5 NFC</li>
     <li>Keyboard: 8BitDo retro keyboard (C64 edition)</li>
 </ul>
 
 <h2>## Software</h2>
 <ul>
-    <li>Operating System: Fedora 41</li>
-    <li>Desktop Environment: KDE Plasma 6</li>
-    <li>Browser: Firefox + Geckium</li>
-    <li>Shell: bash, or tcsh</li>
-    <li>Editor: Visual Studio Code</li>
+    <li>Operating System: Fedora 42</li>
+    <li>Desktop Environment: Gnome 47</li>
+    <li>Browser: Floorp</li>
+    <li>Shell: bash</li>
+    <li>Editor: Neovim</li>
 </ul>
