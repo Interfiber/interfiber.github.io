@@ -1,31 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/*
+ * Fonts
+ */
+
+@font-face {
+    font-family: "Adwaita Mono";
+    src: url("fonts/AdwaitaMonoNerdFont-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Adwaita Mono Bold";
+    src: url("fonts/AdwaitaMonoNerdFont-Bold.ttf");
+}
 
 body {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "Adwaita Mono";
+    color: #e5e5e5;
     background-color: #121212;
-    color: #b4b4b4;
-    padding: 20px;
+}
+
+h1 {
+    font-family: "Adwaita Mono Bold";
 }
 
 a {
-    color: #B14242;
     text-decoration: none;
+    color: rgb(191, 54, 54);
+    font-weight: bolder;
 }
 
 .pfp {
-    float: left;
-    margin-top: 0%;
-    margin-right: 1%;
-    border-radius: 45%;
+    border-radius: 100px;
 }
 
-.pfpUnderline {
-    width: 25%;
-    float: left;
-    margin: 5px;
-    color: #D87C4A;
-}
-
-.roundedPicture {
-    border-radius: 1.5%;
+.dim {
+    color: #535353;
 }
